@@ -62,7 +62,22 @@ header h1 {
   }
 }
 
-main {
+.container3Win {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+@media only screen and (max-width: 800px) {
+  .container3Win {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.container2Win {
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -71,10 +86,46 @@ main {
   margin-top: 50px;
 }
 @media only screen and (max-width: 700px) {
-  main {
+  .container2Win {
     flex-direction: column-reverse;
     align-items: center;
   }
+}
+
+.projectContainer {
+  width: 30vw;
+  height: 50vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 10px 0px;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 800px) {
+  .projectContainer {
+    width: 90vw;
+    height: 90vw;
+    margin-top: 50px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.project {
+  width: 100%;
+  border-bottom: 1px solid rgb(233, 232, 232);
+  color: black;
+  text-decoration: none;
+}
+.project h3,
+.project p {
+  margin-left: 10px;
+}
+.project p {
+  color: gray;
 }
 
 .showcaseContainer {
@@ -84,17 +135,19 @@ main {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 10px 0px;
   border-radius: 10px;
   overflow: scroll;
+  font-size: 1.4vw;
 }
 @media only screen and (max-width: 1000px) {
   .showcaseContainer {
     width: 47vw;
     height: 47vw;
+    font-size: 16px;
   }
 }
 @media only screen and (max-width: 700px) {
   .showcaseContainer {
-    width: 70vw;
-    height: 70vw;
+    width: 80vw;
+    height: 80vw;
     margin-top: 50px;
   }
 }

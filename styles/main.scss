@@ -4,9 +4,13 @@
 $lightgrey: rgb(233, 232, 232);
 //
 //mixins
-@mixin div() {
-    width: 30vw;
-    height: 10vw;
+@mixin container() {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 //
 //main styles:
@@ -61,16 +65,51 @@ header {
         font-size: 6vw;
      }
 }
-main {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 50px;
-    margin-top: 50px;
+.container3Win {
+    @include container();
+     @media only screen and (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+     }
+ }
+.container2Win {
+   @include container();
     @media only screen and (max-width: 700px) {
        flex-direction: column-reverse;
        align-items: center;
+    }
+}
+.projectContainer {
+    width: 30vw;
+    height: 50vw;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 10px 0px;
+    border-radius: 10px;
+     @media only screen and (max-width: 800px) {
+        width: 90vw;
+        height: 90vw;
+        margin-top: 50px;
+     }
+    
+     
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.project {
+    width: 100%;
+    border-bottom: 1px solid $lightgrey;
+    color: black;
+    text-decoration: none;
+    h3,
+    p {
+        margin-left: 10px;
+    }
+    p {
+        color: gray;
     }
 }
 .showcaseContainer {
@@ -80,13 +119,15 @@ main {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 10px 0px;
     border-radius: 10px;
     overflow: scroll;
+    font-size: 1.4vw;
     @media only screen and (max-width: 1000px) {
         width: 47vw;
         height: 47vw;
+        font-size: 16px;
      }
      @media only screen and (max-width: 700px) {
-        width: 70vw;
-        height: 70vw;
+        width: 80vw;
+        height: 80vw;
         margin-top: 50px;
      }
      @media only screen and (max-width: 550px) {
