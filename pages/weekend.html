@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../files/icons/logo.svg" type="image/svg">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <script type="module" src="https://pyscript.net/releases/2024.2.1/core.js"></script>
+    <title>Is it weekend?</title>
+</head>
+
+<body>
+    <header>
+        <img src="../files/icons/logo.svg" id="logo">
+    </header>
+    <h1 class="title">Is it weekend?</h1>
+    <h3 class="sub">In case you forgot</h3>
+    <main>
+        <div class="showcaseContainer">
+            <div class="showcaseTitle">
+                <h3>weekend.py</h3>
+            </div>
+            <code>
+from datetime import date<br><br>
+
+
+today = date.today()<br>
+weekday = today.weekday()<br>
+date = today.strftime("%b-%d-%Y")<br><br>
+
+display(date)<br><br>
+
+print("Today's date:", date)<br><br>
+
+
+if weekday > 3:<br>
+&nbsp;&nbsp;print("It is almost weekend! 🤯")<br><br>
+
+elif weekday > 4:<br>
+&nbsp;&nbsp;print("You have weekend! 🤯 🥳")<br><br>
+   
+
+else:<br>
+&nbsp;&nbsp;print("No weekend 🤯 😞")
+
+            </code>
+        </div>
+        <div class="showcaseContainer" id="terminal">
+            <div class="showcaseTitle">
+                <h3>Output</h3>
+            </div>
+            <script type="py" src="python/weekend.py"></script>
+        </div>
+    </main>
+</body>
+
+</html>

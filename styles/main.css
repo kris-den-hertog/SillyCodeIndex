@@ -1,0 +1,128 @@
+:root {
+  font-family: Arial;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  color: black;
+  background-color: white;
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 10px 0px;
+}
+header h1 {
+  font-weight: 100;
+  margin-left: 20px;
+}
+
+#logo {
+  height: 40px;
+  width: auto;
+  margin-left: 10px;
+}
+
+.title {
+  font-weight: 1000;
+  margin-left: 10px;
+  font-size: 4vw;
+  z-index: 1;
+}
+@media only screen and (max-width: 900px) {
+  .title {
+    font-size: 6vw;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .title {
+    font-size: 10vw;
+  }
+}
+
+.sub {
+  font-weight: 500;
+  color: gray;
+  margin-left: 10px;
+  font-size: 2vw;
+}
+@media only screen and (max-width: 900px) {
+  .sub {
+    font-size: 4vw;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .sub {
+    font-size: 6vw;
+  }
+}
+
+main {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+@media only screen and (max-width: 700px) {
+  main {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+.showcaseContainer {
+  color: black;
+  width: 40vw;
+  height: 40vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 10px 0px;
+  border-radius: 10px;
+  overflow: scroll;
+}
+@media only screen and (max-width: 1000px) {
+  .showcaseContainer {
+    width: 47vw;
+    height: 47vw;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .showcaseContainer {
+    width: 70vw;
+    height: 70vw;
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .showcaseContainer {
+    width: 90vw;
+    height: 400px;
+    margin-top: 50px;
+  }
+}
+
+#terminal {
+  color: white;
+  background-color: black;
+}
+
+.showcaseTitle {
+  color: black;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: rgb(233, 232, 232);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.showcaseTitle h3 {
+  margin-left: 10px;
+}/*# sourceMappingURL=main.css.map */
