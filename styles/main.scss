@@ -149,10 +149,22 @@ a:hover {
     text-align: center;
     display: flex;
     align-items: center;
+    justify-content: space-between; 
     background-color: $lightgrey;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     h3 {
         margin-left: 10px;
     }
+    button {
+        padding: 10px;
+        border: none;
+        background-color: white;
+        font-weight: 900;
+        border-radius: 7px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
 }
+
+

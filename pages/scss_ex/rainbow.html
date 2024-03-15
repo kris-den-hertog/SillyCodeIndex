@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../files/icons/logo.svg" type="image/svg">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="scss/ex.css">
+    <script type="module" src="https://pyscript.net/releases/2024.2.1/core.js"></script>
+    <title>Is it weekend?</title>
+</head>
+
+<body>
+    <header>
+        <a href="../../index.html"><img src="../../files/icons/logo.svg" id="logo"></a>
+    </header>
+    <h1 class="title">Rainbow text</h1>
+    <h3 class="sub">Just like the 90's</h3>
+    <main>
+        <div class="container2Win">
+            <div class="showcaseContainer">
+                <div class="showcaseTitle">
+                    <h3>rainbow.scss</h3>
+                    <button id="rainbow">Copy code</button>
+                    <script>
+                        var rainbow = document.getElementById("rainbow");
+                        rainbow.addEventListener("click", copyBasic);
+
+                        function copyBasic() {
+                            var rainbowCode = `@mixin rainbow() {
+        background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    p {
+        @include rainbow();
+    }`;
+
+                            var tempInput = document.createElement("textarea"); // Changed input to textarea
+                            tempInput.value = rainbowCode;
+                            document.body.appendChild(tempInput);
+                            tempInput.select();
+                            document.execCommand("copy");
+                            document.body.removeChild(tempInput);
+
+                            rainbow.innerHTML = "Copied!"; // Changed innerHTML message
+                            setTimeout(function () {
+                                rainbow.innerHTML = "Copy code";
+                            }, 1000);
+                        }
+                    </script>
+                </div>
+                <code>
+                @mixin rainbow() {<br>
+                    &nbsp;background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);<br>
+                    &nbsp;color: transparent;<br>
+                    &nbsp;background-clip: text;<br>
+                    &nbsp;-webkit-background-clip: text;<br>
+                }<br><br>
+
+                p {<br>
+                    &nbsp;@include rainbow();<br>
+                }
+           
+            </code>
+            </div>
+            <div class="showcaseContainer">
+                <div class="showcaseTitle">
+                    <h3>Output</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porta congue nulla feugiat
+                    bibendum. Nullam bibendum arcu ut pulvinar pellentesque. Morbi erat libero, auctor in tellus eget,
+                    dictum pulvinar neque. Maecenas eu tincidunt sapien. Suspendisse sem quam, mattis a justo ac, rutrum
+                    tempor arcu. Mauris massa lacus, interdum id egestas ac, rutrum faucibus felis. Phasellus congue sem
+                    tortor, et volutpat ante tristique a. Aenean ante sem, mattis in fringilla sed, iaculis non mauris.
+                    Duis eget.</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

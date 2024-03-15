@@ -172,10 +172,20 @@ a:hover {
   text-align: center;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: rgb(233, 232, 232);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .showcaseTitle h3 {
   margin-left: 10px;
+}
+.showcaseTitle button {
+  padding: 10px;
+  border: none;
+  background-color: white;
+  font-weight: 900;
+  border-radius: 7px;
+  margin-right: 10px;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

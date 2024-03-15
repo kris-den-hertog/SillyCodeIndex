@@ -1,0 +1,13 @@
+//ex.scss
+//
+//rainbow.html
+@mixin rainbow() {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+p {
+    @include rainbow();
+}

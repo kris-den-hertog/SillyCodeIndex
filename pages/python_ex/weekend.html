@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../files/icons/logo.svg" type="image/svg">
+    <link rel="icon" href="../../files/icons/logo.svg" type="image/svg">
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../../styles/main.css">
     <script type="module" src="https://pyscript.net/releases/2024.2.1/core.js"></script>
     <title>Is it weekend?</title>
 </head>
 
 <body>
     <header>
-        <a href="../index.html"><img src="../files/icons/logo.svg" id="logo"></a>
+        <a href="../../index.html"><img src="../../files/icons/logo.svg" id="logo"></a>
     </header>
     <h1 class="title">Is it weekend yet?</h1>
     <h3 class="sub">In case you forgot</h3>
@@ -22,6 +22,43 @@
         <div class="showcaseContainer">
             <div class="showcaseTitle">
                 <h3>weekend.py</h3>
+                <button id="weekend">Copy code</button>
+                <script>
+                    var weekendButton = document.getElementById("weekend");
+weekendButton.addEventListener("click", copyPython);
+
+function copyPython() {
+    var pythonCode = `
+from datetime import date
+today = date.today()
+weekday = today.weekday()
+date = today.strftime("%b-%d-%Y")
+
+print(date)
+
+if weekday >= 3:
+
+   print("It is almost weekend! 🤯")
+elif weekday >= 4:
+   print("You have weekend! 🤯 🥳")
+else:
+   print("No weekend 🤯 😞")
+    `
+
+
+    var tempInput = document.createElement("textarea");
+    tempInput.value = pythonCode;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    weekendButton.innerHTML = "Copied!";
+    setTimeout(function () {
+        weekendButton.innerHTML = "Copy";
+    }, 1000);
+}
+                </script>
             </div>
             <code>
 from datetime import date<br><br>
