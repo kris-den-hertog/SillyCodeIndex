@@ -1,5 +1,6 @@
 :root {
   font-family: Arial;
+  overflow-x: hidden;
 }
 
 body {
@@ -136,6 +137,10 @@ a:hover {
   border-radius: 10px;
   overflow: scroll;
   font-size: 1.4vw;
+}
+.showcaseContainer img {
+  width: 100%;
+  height: auto;
 }
 @media only screen and (max-width: 1000px) {
   .showcaseContainer {

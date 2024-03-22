@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../files/icons/logo.svg" type="image/svg">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.2.1/core.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <script type="module" src="https://pyscript.net/releases/2024.2.1/core.js"></script>
+    <title>Is it weekend?</title>
+</head>
+
+<body>
+    <header>
+        <a href="../../index.html"><img src="../../files/icons/logo.svg" id="logo"></a>
+    </header>
+    <h1 class="title">Battery checker</h1>
+    <h3 class="sub">For Macos</h3>
+    <main>
+        <div class="container2Win">
+            <div class="showcaseContainer">
+                <div class="showcaseTitle">
+                    <h3>battery.py</h3>
+                    <button id="battery">Copy code</button>
+                    <script>
+                        var batteryButton = document.getElementById("battery"); // Corrected id
+                        batteryButton.addEventListener("click", copyPython);
+
+                        function copyPython() {
+                            var pythonCode = `
+# make sure you have installed psutil via pip3 install psutil!
+import psutil
+import time
+import subprocess
+                    
+# Function to display notification on macOS
+def notify_mac(title, message):
+    subprocess.call(['osascript', '-e', f'display notification "{message}" with title "{title}"'])
+                    
+# Loop that checks if battery needs charging
+while True:
+    battery = psutil.sensors_battery()
+    percent = battery.percent
+    low = 10
+                    
+    if percent > low:
+        notify_mac("Battery", f"No charging needed! {percent}% Battery remaining.")
+                    
+    else:
+        notify_mac("Battery", f"Please charge, {percent}% Battery remaining.")
+                    
+    # notify user every 60 min
+    time.sleep(60 * 60)`;
+
+                            var tempInput = document.createElement("textarea");
+                            tempInput.value = pythonCode;
+                            document.body.appendChild(tempInput);
+                            tempInput.select();
+                            document.execCommand("copy");
+                            document.body.removeChild(tempInput);
+
+                            batteryButton.innerHTML = "Copied!"; // Corrected variable name
+                            setTimeout(function () {
+                                batteryButton.innerHTML = "Copy code"; // Corrected variable name
+                            }, 1000);
+                        }
+                    </script>
+
+                </div>
+                <code>
+# make sure you have installed psutil via pip3 install psutil!<br><br>
+import psutil<br>
+import time<br>
+import subprocess<br><br>
+
+# Function to display notification on macOS<br>
+def notify_mac(title, message):<br>
+    subprocess.call(['osascript', '-e', f'display notification "{message}" with title "{title}"'])<br><br>
+
+# Loop that checks if battery needs charging<br>
+while True:<br>
+    &nbsp; &nbsp;battery = psutil.sensors_battery()<br>
+    &nbsp; &nbsp;percent = battery.percent<br>
+    &nbsp; &nbsp;low = 10<br><br>
+
+    &nbsp; &nbsp;if percent > low:<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;notify_mac("Battery", f"No charging needed! {percent}% Battery remaining.")<br><br>
+
+    &nbsp;&nbsp;else:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;notify_mac("Battery", f"Please charge, {percent}% Battery remaining.")<br><br>
+
+    # notify user every 60 min<br>
+    &nbsp;&nbsp;time.sleep(60 * 60)
+            </code>
+            </div>
+            <div class="showcaseContainer">
+                <div class="showcaseTitle">
+                    <h3>Output</h3>
+                </div>
+                <img src="../../files/img/notificationMacB.jpg" >
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
